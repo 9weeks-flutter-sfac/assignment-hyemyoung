@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ThirdAssignment extends StatefulWidget {
-  ThirdAssignment({super.key});
+class FourthAssignment extends StatefulWidget {
+  FourthAssignment({super.key});
 
   final TextEditingController _textFieldController = TextEditingController();
 
   @override
-  State<ThirdAssignment> createState() => _ThirdAssignmentState();
+  State<FourthAssignment> createState() => _FourthAssignmentState();
 }
 
-class _ThirdAssignmentState extends State<ThirdAssignment> {
+class _FourthAssignmentState extends State<FourthAssignment> {
   bool isSunClicked = false;
   bool isMoonClicked = false;
   bool isStarClicked = false;
@@ -18,7 +18,7 @@ class _ThirdAssignmentState extends State<ThirdAssignment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('3번 과제'),
+        title: Text('3번 과제: 사실 4번 과제'),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SecondAssignment extends StatefulWidget {
-  const SecondAssignment({super.key});
+class ThirdAssignment extends StatefulWidget {
+  const ThirdAssignment({super.key});
 
   @override
-  State<SecondAssignment> createState() => _SecondAssignmentState();
+  State<ThirdAssignment> createState() => _ThirdAssignmentState();
 }
 
-class _SecondAssignmentState extends State<SecondAssignment> {
+class _ThirdAssignmentState extends State<ThirdAssignment> {
   String inputValue = '';
   final TextEditingController _textFieldController = TextEditingController();
 
@@ -15,7 +15,7 @@ class _SecondAssignmentState extends State<SecondAssignment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('2번 과제'),
+        title: Text('2번 과제: 사실 3번 과제'),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(

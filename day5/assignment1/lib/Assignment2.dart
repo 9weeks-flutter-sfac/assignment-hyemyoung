@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'AnimalName.dart';
 
-class FirstAssignment extends StatelessWidget {
-  FirstAssignment({super.key});
+class SecondAssignment extends StatelessWidget {
+  SecondAssignment({super.key});
 
   final ScrollController _scrollController = ScrollController();
 
@@ -10,7 +10,7 @@ class FirstAssignment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('1번 과제'),
+        title: Text('1번 과제: 사실 2번과제'),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
