@@ -61,9 +61,6 @@ class _ScaffState extends State<Scaff> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                '$inputValueX, $inputValueY 그리고 결과는 $resultValue',
-              ),
               Row(
                 children: [
                   Text('X의 값은'),
