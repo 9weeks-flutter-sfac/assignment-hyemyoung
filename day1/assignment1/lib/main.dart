@@ -13,13 +13,14 @@ class MyApp extends StatelessWidget {
           title: Text('Day1 Assignment1: RichText Widget'),
         ),
         body: Center(
-          child: RichText(
+          child: Text.rich(
             textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+            TextSpan(
               children: <TextSpan>[
                 TextSpan(
                   text: '안녕하세요!\n간단하게 제 ',
