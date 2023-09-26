@@ -44,9 +44,7 @@ class MyApp extends StatelessWidget {
                           fontWeight: FontWeight.normal),
                     ),
                   ),
-                  width: 300.0,
-                  height: 180.0,
-                  margin: EdgeInsets.only(right: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     gradient: LinearGradient(
@@ -69,9 +67,7 @@ class MyApp extends StatelessWidget {
                           fontWeight: FontWeight.normal),
                     ),
                   ),
-                  width: 300.0,
-                  height: 180.0,
-                  margin: EdgeInsets.only(right: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     gradient: LinearGradient(
@@ -94,8 +90,7 @@ class MyApp extends StatelessWidget {
                           fontWeight: FontWeight.normal),
                     ),
                   ),
-                  width: 300.0,
-                  height: 180.0,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     gradient: LinearGradient(
@@ -112,44 +107,56 @@ class MyApp extends StatelessWidget {
             ),
             Divider(),
             Container(
-              margin: EdgeInsets.only(top: 10.0),
               color: Colors.blue,
-              padding: EdgeInsets.symmetric(vertical: 14.0),
-              child: ListTile(
-                title: Text(
-                  '곰돌이',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '프론트엔드',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w200),
-                    ),
-                    Text(
-                      'flutter, react',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w200),
-                    ),
-                  ],
-                ),
-                leading: ClipOval(
-                  child: Image.network(
-                      'https://lh3.googleusercontent.com/3wJ3kGLIiv3hDlhRRkEx1zSqHf5-4VbVTEPfsDHY8EP8n_wa4kPfGjlga4deb08rG14DYauPFuTmvdH434NPueF4XA=s186'),
-                ),
-                trailing: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                ),
+              padding: EdgeInsets.all(12),
+              child: Row(
+                children: [
+                  Row(
+                    children: [
+                      ClipOval(
+                        child: Image.network(
+                          'https://lh3.googleusercontent.com/3wJ3kGLIiv3hDlhRRkEx1zSqHf5-4VbVTEPfsDHY8EP8n_wa4kPfGjlga4deb08rG14DYauPFuTmvdH434NPueF4XA=s186',
+                          width: 60,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '곰돌이',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            '프론트엔드',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w200),
+                          ),
+                          Text(
+                            'flutter, react',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w200),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Spacer(flex: 1),
+                  Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ],
               ),
             ),
           ],
