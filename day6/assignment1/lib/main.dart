@@ -150,11 +150,11 @@ class _MainPageState extends State<MainPage> {
           ListView.builder(
             itemCount: mathData.length,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    Container(
+              return Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Container(
                       child: Center(child: Text(mathData[index].toString())),
                       width: mathData[index] * 2,
                       height: 24,
@@ -169,8 +169,8 @@ class _MainPageState extends State<MainPage> {
                             )
                           ]),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               );
             },
           ),
