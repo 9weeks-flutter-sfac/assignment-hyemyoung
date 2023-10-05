@@ -45,12 +45,13 @@ class _FirstPageState extends State<FirstPage> {
           scrollDirection: Axis.vertical,
           physics: NeverScrollableScrollPhysics(),
           itemCount: imageUrl.length,
-          itemBuilder: (c, i) => Card(
+          itemBuilder: (BuildContext, index) => Card(
             child: Center(
-                child: ClipRRect(
-              child: Image.network(imageUrl[i]),
-              borderRadius: BorderRadius.circular(20),
-            )),
+              child: ClipRRect(
+                child: Image.network(imageUrl[index]),
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
           ),
         ),
       ),
