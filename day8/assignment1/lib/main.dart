@@ -17,28 +17,32 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   RefreshController refreshController = RefreshController();
+  Connectivity connectivity = Connectivity();
 
-  bool isLoading = true;
+  bool isLoading = false;
   bool isConnected = false;
   var resultData;
 
-  void initState() async {
+  @override
+  void initState() {
     super.initState();
-    await checkConnection();
-    await getData();
+    checkConnection();
+    getData();
   }
 
   Future<void> checkConnection() async {
-    setState(() {
-      isConnected = false;
-    });
-    await Future.delayed(Duration(seconds: 2));
+    var connectivityResult = await connectivity.checkConnectivity();
 
-    Connectivity().checkConnectivity();
+    isConnected = false;
+    setState(() {});
 
-    setState(() {
+    await Future.delayed(Duration(seconds: 1));
+
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
       isConnected = true;
-    });
+      setState(() {});
+    }
   }
 
   Future<void> getData() async {
@@ -66,18 +70,17 @@ class _MyAppState extends State<MyApp> {
         controller: refreshController,
         enablePullDown: true,
         onRefresh: () async {
-          setState(() {
-            isLoading = true;
-          });
-          await Future.delayed(Duration(seconds: 2));
+          isLoading = true;
+          setState(() {});
 
-          setState(() {
-            getData();
-            isLoading = false;
-          });
+          await Future.delayed(Duration(seconds: 1));
+
+          await getData();
+          isLoading = false;
+          setState(() {});
           refreshController.refreshCompleted();
         },
-        child: !isConnected
+        child: isConnected == false
             ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +96,7 @@ class _MyAppState extends State<MyApp> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                     ),
-                    itemCount: resultData.length,
+                    itemCount: resultData?.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: Padding(
@@ -128,7 +131,7 @@ class _MyAppState extends State<MyApp> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                     ),
-                    itemCount: resultData.length,
+                    itemCount: 6,
                     itemBuilder: (BuildContext context, int index) {
                       return Shimmer.fromColors(
                           baseColor: Colors.grey,
